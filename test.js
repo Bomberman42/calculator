@@ -39,17 +39,16 @@ async function askAQuestions() {
 
   while(question != 'Não' && question != 'não'){
       
-    var operation = await askAQuestion('Qual operação deseja fazer: "Soma", "Subtração", "Multiplicação" ou "Divisão"? ');
-
     while(question != 'Sim' && question != 'sim' && question != 'Não' && question != 'não'){
-        console.log('Sinto muito, não compreendi sua resposta.');
-        question = await askAQuestion('Você quer realizar alguma operação matemática? Responda somente com "Sim" e "Não". ');
+      console.log('Sinto muito, não compreendi sua resposta.');
+      question = await askAQuestion('Você quer realizar alguma operação matemática? Responda somente com "Sim" e "Não". ');
     } 
-
+    
     if(question == 'Não' || question == 'não'){
-        break;
+      break;
     }
-
+    
+    var operation = await askAQuestion('Qual operação deseja fazer: "Soma", "Subtração", "Multiplicação" ou "Divisão"? ');
 
     while (operation != "Soma" && operation != "soma" && operation != "Subtração" && operation != "subtração" && operation != "Multiplicação" && operation != "multiplicação" && operation != "Divisão" && operation != "divisão") {
         console.log(`Operação não encontrada!`);
